@@ -12,7 +12,7 @@ Datasets from: [Finance & Accounting Courses - Udemy (13K+ course)](https://www.
 
 งานนี้เป็นส่วนของวิชา INT214 Statistics for Information technology <br/> ภาคเรียนที่ 1 ปีการศึกษา 2564 คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
 
-### Team: nameXXXXXX
+### Team: Pandaza500
 
 1. นายอภิสิทธิ์ ลอมโฮม StudentID: 62130500133
 2. นายสหทัศน์​ ยิ่งสกุล​เกียรติ​ StudentID: 63130500113
