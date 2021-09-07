@@ -18,7 +18,7 @@ Datasets from: [Finance & Accounting Courses - Udemy (13K+ course)](https://www.
 2. นายสหทัศน์​ ยิ่งสกุล​เกียรติ​ StudentID: 63130500113
 3. นายศุภวิชญ์ วิริยะภูวดล StudentID: 63130500111
 4. นายพีรพัฒน์ ค้าเกิด StudentID: 63130500088
-5. นางสาวฐิติมา นาคขำ StudentID: 63130500xxx
+5. นางสาวฐิติมา นาคขำ StudentID: 63130500152
 
 ### Instructor
 
