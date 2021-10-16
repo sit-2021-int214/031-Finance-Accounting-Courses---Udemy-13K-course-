@@ -17,6 +17,12 @@ library("dplyr")
 # check data type of Udemy
 glimpse(Udemy)
 
+# change type of value form character of amount to numberic
+# discount price
+Udemy$discount_price__amount <- as.numeric(Udemy$discount_price__amount)
+# price detail
+Udemy$price_detail__amount <- as.numeric(Udemy$price_detail__amount)
+
 # by id is duplicate
 Udemy$id %>% duplicated() %>% sum()
 # 0
