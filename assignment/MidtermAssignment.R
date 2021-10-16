@@ -29,5 +29,6 @@ Udemy$discount_price__amount <- replace(Udemy$discount_price__amount,is.na(Udemy
 Udemy$discount_price__currency <- replace(Udemy$discount_price__currency,Udemy$discount_price__currency=="", "INR")
 
 # and replace by string with ₹+amount with mutate
-Udemy <- Udemy %>% mutate(discount_price__price_string=paste("₹",discount_price__amount)) # convert to character
+Udemy <- Udemy %>% mutate(discount_price__price_string=paste("₹",discount_price__amount))
 # note your can't use character plus character by character + character but can use paste(x1,x2,...,(collapse="-")[optional]) 
+Udemy <- Udemy %>% mutate(price_detail__price_string=paste("₹",price_detail__amount))
