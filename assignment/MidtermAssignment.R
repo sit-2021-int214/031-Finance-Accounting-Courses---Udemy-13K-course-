@@ -23,12 +23,20 @@ Udemy$id %>% duplicated() %>% sum()
 # Umedy have some data are not duplicate
 
 # When amount price of course aren't show in table should replace by o
+# discount price
 Udemy$discount_price__amount <- replace(Udemy$discount_price__amount,is.na(Udemy$discount_price__amount), 0)
+# price detail
+Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,is.na(Udemy$price_detail__amount), 0)
 
 # When currency price of course aren't show in table should replace by INR
+# discount price
 Udemy$discount_price__currency <- replace(Udemy$discount_price__currency,Udemy$discount_price__currency=="", "INR")
+# detail of price
+Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,Udemy$price_detail__amount=="", "INR")
 
 # and replace by string with ₹+amount with mutate
+# discount price
 Udemy <- Udemy %>% mutate(discount_price__price_string=paste("₹",discount_price__amount))
-# note your can't use character plus character by character + character but can use paste(x1,x2,...,(collapse="-")[optional]) 
+# note your can't use character plus character by character + character but can use paste(x1,x2,...,(collapse="-")[optional])
+# price detail
 Udemy <- Udemy %>% mutate(price_detail__price_string=paste("₹",price_detail__amount))
