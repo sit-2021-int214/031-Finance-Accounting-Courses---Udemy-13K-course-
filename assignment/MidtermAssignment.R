@@ -55,17 +55,17 @@ Udemy %>%
   head(10)
 # result from output:
 # show the The Complete SQL Bootcamp 2020: Go from Zero to Hero have the most reviews
-                                                          title  rating reviews
-1          The Complete SQL Bootcamp 2020: Go from Zero to Hero 4.67874   78006
-2  Tableau 2020 A-Z: Hands-On Tableau Training for Data Science 4.60015   54581
-3                        PMP Exam Prep Seminar -  PMBOK Guide 6 4.59326   52653
-4                    The Complete Financial Analyst Course 2020 4.53772   46447
-5  An Entire MBA in 1 Course:Award Winning Business School Prof 4.47173   41630
-6   Microsoft Power BI - A Complete Introduction [2020 EDITION] 4.57676   38093
-7  Agile Crash Course: Agile Project Management; Agile Delivery 4.29118   30470
-8    Beginner to Pro in Excel: Financial Modeling and Valuation 4.53346   28665
-9     Become a Product Manager | Learn the Skills & Get the Job 4.50080   27408
-10                The Business Intelligence Analyst Course 2020 4.49575   23906
+#                                                           title  rating reviews
+# 1          The Complete SQL Bootcamp 2020: Go from Zero to Hero 4.67874   78006
+# 2  Tableau 2020 A-Z: Hands-On Tableau Training for Data Science 4.60015   54581
+# 3                        PMP Exam Prep Seminar -  PMBOK Guide 6 4.59326   52653
+# 4                    The Complete Financial Analyst Course 2020 4.53772   46447
+# 5  An Entire MBA in 1 Course:Award Winning Business School Prof 4.47173   41630
+# 6   Microsoft Power BI - A Complete Introduction [2020 EDITION] 4.57676   38093
+# 7  Agile Crash Course: Agile Project Management; Agile Delivery 4.29118   30470
+# 8    Beginner to Pro in Excel: Financial Modeling and Valuation 4.53346   28665
+# 9     Become a Product Manager | Learn the Skills & Get the Job 4.50080   27408
+# 10                The Business Intelligence Analyst Course 2020 4.49575   23906
 
 # find number of courses and price detail of amount who are top of 15 courses have the most price detail of amount course
 Udemy %>%
@@ -77,19 +77,19 @@ Udemy %>%
 # show 123 courses have amount of detail price is 12800 rupee
 # 8 course have amount of detail price is 12480 rupee
 # and 4 course have amount of detail price is 12160 rupee
-   amount    n
-1   12800  123
-2   12480    8
-3   12160    4
-4   11840    6
-5   11520    4
-6   11200    3
-7   10880    2
-8   10560    2
-9   10240    8
-10   9920    3
-11   9600   52
-12   9280   34
-13   8960   52
-14   8640 3213
-15   8320   71
+#    amount    n
+# 1   12800  123
+# 2   12480    8
+# 3   12160    4
+# 4   11840    6
+# 5   11520    4
+# 6   11200    3
+# 7   10880    2
+# 8   10560    2
+# 9   10240    8
+# 10   9920    3
+# 11   9600   52
+# 12   9280   34
+# 13   8960   52
+# 14   8640 3213
+# 15   8320   71
