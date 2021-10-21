@@ -13,7 +13,7 @@ library("stringr")
 library("dplyr")
 
 # Explore data 
-glimpse(Udemy) #data of Udemy have 13608 rows and 20 columns by each columns have
+glimpse(UdemyCSV) #data of Udemy have 13608 rows and 20 columns by each columns have
 
 # id : The course ID of that particular course.
 # title : Shows the unique names of the courses available under the development category on Udemy.
