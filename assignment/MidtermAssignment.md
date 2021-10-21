@@ -64,10 +64,10 @@ Udemy$discount_price__currency <- replace(Udemy$discount_price__currency,Udemy$d
 # detail of price
 Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,Udemy$price_detail__amount=="", "INR")
 
-# and replace by string with â¹+amount with mutate
+# and replace by string with +amount with mutate
 # discount price
-Udemy <- Udemy %>% mutate(discount_price__price_string=paste("â¹",discount_price__amount))
+Udemy <- Udemy %>% mutate(discount_price__price_string=paste("",discount_price__amount))
 # note your can't use character plus character by character + character but can use paste(x1,x2,...,(collapse="-")[optional])
 # price detail
-Udemy <- Udemy %>% mutate(price_detail__price_string=paste("â¹",price_detail__amount))
+Udemy <- Udemy %>% mutate(price_detail__price_string=paste("",price_detail__amount))
 ```
