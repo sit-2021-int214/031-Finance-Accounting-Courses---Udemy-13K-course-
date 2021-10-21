@@ -28,15 +28,13 @@ library("dplyr")
 
 ```{R}
 Udemy <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/main/assignment/data/udemy_output_All_Finance__Accounting_p1_p626.csv")
+View(Udemy)
 ```
 
 ### Explore a Data
 ```{R}
 # Testing with glimpse
 glimpse(Udemy)
-
-# View table
-View(Udemy)
 ```
 data of Udemy have 13608 rows and 20 columns by each columns have
 - id : The course ID of that particular course.
