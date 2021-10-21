@@ -30,3 +30,20 @@ library("dplyr")
 UdemyCSV <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/main/assignment/data/udemy_output_All_Finance__Accounting_p1_p626.csv")
 View(UdemyCSV)
 ```
+
+### Data Cleaning
+
+1.) check data type of UdemyCSV
+
+```{R}
+glimpse(UdemyCSV)
+```
+
+2.) change type of value form character of amount to numberic
+
+```{R}
+# discount price
+Udemy$discount_price__amount <- as.numeric(Udemy$discount_price__amount)
+# price detail
+Udemy$price_detail__amount <- as.numeric(Udemy$price_detail__amount)
+```
