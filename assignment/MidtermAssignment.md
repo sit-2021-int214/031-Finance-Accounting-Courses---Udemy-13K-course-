@@ -33,10 +33,10 @@ View(UdemyCSV)
 
 ### Data Cleaning
 
-1.) check data type of UdemyCSV
+1.) check data type of UdemyCSV and declare Udemy
 
 ```{R}
-glimpse(UdemyCSV)
+Udemy <- glimpse(UdemyCSV)
 ```
 
 2.) change type of value form character of amount to numberic
