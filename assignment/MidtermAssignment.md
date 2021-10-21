@@ -79,9 +79,9 @@ result of output:
 # Rows: 13,608
 # Columns: 20
 # $ id                           <int> 762616, 937678, 1361790, 648826, 637930, 1208634, 864146, 321~
-#   $ title                        <chr> "The Complete SQL Bootcamp 2020: Go from Zero to Hero", "Tabl~
+# $ title                        <chr> "The Complete SQL Bootcamp 2020: Go from Zero to Hero", "Tabl~
 # $ url                          <chr> "/course/the-complete-sql-bootcamp/", "/course/tableau10/", "~
-#   $ is_paid                      <chr> "True", "True", "True", "True", "True", "True", "True", "True~
+# $ is_paid                      <chr> "True", "True", "True", "True", "True", "True", "True", "True~
 # $ num_subscribers              <int> 295509, 209070, 155282, 245860, 374836, 124180, 96207, 127680~
 # $ avg_rating                   <dbl> 4.66019, 4.58956, 4.59491, 4.54407, 4.47080, 4.56228, 4.32383~
 # $ avg_rating_recent            <dbl> 4.67874, 4.60015, 4.59326, 4.53772, 4.47173, 4.57676, 4.29118~
@@ -91,13 +91,13 @@ result of output:
 # $ num_published_lectures       <int> 84, 78, 292, 338, 83, 275, 23, 275, 144, 413, 117, 67, 43, 41~
 # $ num_published_practice_tests <int> 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
 # $ created                      <chr> "2016-02-14T22:57:48Z", "2016-08-22T12:10:18Z", "2017-09-26T1~
-#   $ published_time               <chr> "2016-04-06T05:16:11Z", "2016-08-23T16:59:49Z", "2017-11-14T2~
+# $ published_time               <chr> "2016-04-06T05:16:11Z", "2016-08-23T16:59:49Z", "2017-11-14T2~
 # $ discount_price__amount       <dbl> 455, 455, 455, 455, 455, 455, 455, 455, 455, 455, 455, 455, 4~
 # $ discount_price__currency     <chr> "INR", "INR", "INR", "INR", "INR", "INR", "INR", "INR", "INR"~
 # $ discount_price__price_string <chr> "โ\202น455", "โ\202น455", "โ\202น455", "โ\202น455", "โ\202น45~
-#   $ price_detail__amount         <dbl> 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8~
-#   $ price_detail__currency       <chr> "INR", "INR", "INR", "INR", "INR", "INR", "INR", "INR", "INR"~
-#   $ price_detail__price_string   <chr> "โ\202น8,640", "โ\202น8,640", "โ\202น8,640", "โ\202น8,640", "~
+# $ price_detail__amount         <dbl> 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8640, 8~
+# $ price_detail__currency       <chr> "INR", "INR", "INR", "INR", "INR", "INR", "INR", "INR", "INR"~
+# $ price_detail__price_string   <chr> "โ\202น8,640", "โ\202น8,640", "โ\202น8,640", "โ\202น8,640", "~
 ```
 
 2.) change type of value form character of amount to numberic
