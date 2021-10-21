@@ -36,8 +36,10 @@ View(UdemyCSV)
 1.) check data type of UdemyCSV and declare Udemy
 
 ```{R}
-Udemy <- glimpse(UdemyCSV)
 #data of Udemy have 13608 rows and 20 columns by each columns have
+Udemy <- glimpse(UdemyCSV)
+# check data type of Udemy
+glimpse(Udemy)
 ```
 
 result
@@ -73,6 +75,7 @@ price_ detail_price_string :
 2.) change type of value form character of amount to numberic
 
 ```{R}
+# change type of value form character of amount to numberic
 # discount price
 Udemy$discount_price__amount <- as.numeric(Udemy$discount_price__amount)
 # price detail
@@ -95,10 +98,72 @@ Udemy$discount_price__currency <- replace(Udemy$discount_price__currency,Udemy$d
 # detail of price
 Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,Udemy$price_detail__amount=="", "INR")
 
-# and replace by string with +amount with mutate
+# and replace by string with current+amount with mutate
 # discount price
-Udemy <- Udemy %>% mutate(discount_price__price_string=paste("",discount_price__amount))
+Udemy <- Udemy %>% mutate(discount_price__price_string=paste(discount_price__currency,discount_price__amount))
 # note your can't use character plus character by character + character but can use paste(x1,x2,...,(collapse="-")[optional])
 # price detail
-Udemy <- Udemy %>% mutate(price_detail__price_string=paste("",price_detail__amount))
+Udemy <- Udemy %>% mutate(price_detail__price_string=paste(price_detail__currency,price_detail__amount))
+```
+
+2.) Explore Data
+
+2.1) find title name,rating and number of reviews who are top of 10 courses have the most reviews in each course
+
+```{R}
+Udemy %>%
+  select(title,rating,num_reviews) %>%
+  arrange(desc(num_reviews)) %>%
+  summarise(title,rating,reviews=num_reviews) %>%
+  head(10)
+```
+
+result from output:
+
+```{R}
+# show the The Complete SQL Bootcamp 2020: Go from Zero to Hero have the most reviews
+                                                           title  rating reviews
+ 1          The Complete SQL Bootcamp 2020: Go from Zero to Hero 4.67874   78006
+ 2  Tableau 2020 A-Z: Hands-On Tableau Training for Data Science 4.60015   54581
+ 3                        PMP Exam Prep Seminar -  PMBOK Guide 6 4.59326   52653
+ 4                    The Complete Financial Analyst Course 2020 4.53772   46447
+ 5  An Entire MBA in 1 Course:Award Winning Business School Prof 4.47173   41630
+ 6   Microsoft Power BI - A Complete Introduction [2020 EDITION] 4.57676   38093
+ 7  Agile Crash Course: Agile Project Management; Agile Delivery 4.29118   30470
+ 8    Beginner to Pro in Excel: Financial Modeling and Valuation 4.53346   28665
+ 9     Become a Product Manager | Learn the Skills & Get the Job 4.50080   27408
+ 10                The Business Intelligence Analyst Course 2020 4.49575   23906
+```
+
+2.2) find number of courses and price detail of amount who are top of 15 courses have the most price detail of amount course
+
+```{R}
+Udemy %>%
+  count(amount=price_detail__amount) %>%
+  arrange(desc(amount)) %>%
+  head(15)
+```
+
+result from output:
+
+```{R}
+# show 123 courses have amount of detail price is 12800 rupee
+# 8 course have amount of detail price is 12480 rupee
+# and 4 course have amount of detail price is 12160 rupee
+   amount    n
+1   12800  123
+2   12480    8
+3   12160    4
+4   11840    6
+5   11520    4
+6   11200    3
+7   10880    2
+8   10560    2
+9   10240    8
+10   9920    3
+11   9600   52
+12   9280   34
+13   8960   52
+14   8640 3213
+15   8320   71
 ```
