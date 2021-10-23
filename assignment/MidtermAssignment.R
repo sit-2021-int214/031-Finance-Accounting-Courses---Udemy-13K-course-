@@ -76,25 +76,25 @@ Udemy <- Udemy %>% mutate(discount_price__price_string=paste(discount_price__cur
 # price detail
 Udemy <- Udemy %>% mutate(price_detail__price_string=paste(price_detail__currency,price_detail__amount))
 
-# find title name,rating and number of reviews who are top of 10 courses have the most reviews in each course
+# find title name, rating, number of subscribers and number of reviews who are top of 10 courses have the most reviews in each course
 Udemy %>%
-  select(title,rating,num_reviews) %>%
+  select(title,rating,num_subscribers,num_reviews) %>%
   arrange(desc(num_reviews)) %>%
-  summarise(title,rating,reviews=num_reviews) %>%
+  summarise(title,rating,subscribe=num_subscribers,reviews=num_reviews) %>%
   head(10)
 # result from output:
 # show the The Complete SQL Bootcamp 2020: Go from Zero to Hero have the most reviews
-#                                                           title  rating reviews
-# 1          The Complete SQL Bootcamp 2020: Go from Zero to Hero 4.67874   78006
-# 2  Tableau 2020 A-Z: Hands-On Tableau Training for Data Science 4.60015   54581
-# 3                        PMP Exam Prep Seminar -  PMBOK Guide 6 4.59326   52653
-# 4                    The Complete Financial Analyst Course 2020 4.53772   46447
-# 5  An Entire MBA in 1 Course:Award Winning Business School Prof 4.47173   41630
-# 6   Microsoft Power BI - A Complete Introduction [2020 EDITION] 4.57676   38093
-# 7  Agile Crash Course: Agile Project Management; Agile Delivery 4.29118   30470
-# 8    Beginner to Pro in Excel: Financial Modeling and Valuation 4.53346   28665
-# 9     Become a Product Manager | Learn the Skills & Get the Job 4.50080   27408
-# 10                The Business Intelligence Analyst Course 2020 4.49575   23906
+#                                                           title  rating subscribe reviews
+# 1          The Complete SQL Bootcamp 2020: Go from Zero to Hero 4.67874    295509   78006
+# 2  Tableau 2020 A-Z: Hands-On Tableau Training for Data Science 4.60015    209070   54581
+# 3                        PMP Exam Prep Seminar -  PMBOK Guide 6 4.59326    155282   52653
+# 4                    The Complete Financial Analyst Course 2020 4.53772    245860   46447
+# 5  An Entire MBA in 1 Course:Award Winning Business School Prof 4.47173    374836   41630
+# 6   Microsoft Power BI - A Complete Introduction [2020 EDITION] 4.57676    124180   38093
+# 7  Agile Crash Course: Agile Project Management; Agile Delivery 4.29118     96207   30470
+# 8    Beginner to Pro in Excel: Financial Modeling and Valuation 4.53346    127680   28665
+# 9     Become a Product Manager | Learn the Skills & Get the Job 4.50080    112572   27408
+# 10                The Business Intelligence Analyst Course 2020 4.49575    115269   23906
 
 # find number of courses and price detail of amount who are top of 15 courses have the most price detail of amount course
 Udemy %>%
