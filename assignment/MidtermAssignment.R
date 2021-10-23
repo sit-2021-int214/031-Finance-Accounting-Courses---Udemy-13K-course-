@@ -122,3 +122,42 @@ Udemy %>%
 # 13   8960   52
 # 14   8640 3213
 # 15   8320   71
+
+# show your summarise of course who are paid and not paid with
+# count of course, average of rating, average of subscribes,
+# max of subscribe and average of review and max of review
+
+Udemy %>% count(is_paid) %>% summarise(is_paid,count_course=n)
+# show result counting of paid and not paid course
+#   is_paid count_course
+# 1   False          496
+# 2    True        13112
+
+Udemy %>% group_by(is_paid) %>% 
+  select(rating,num_subscribers,num_reviews) %>%
+  summarise(average_rating = mean(rating, na.rm = TRUE),
+            average_subscribes = mean(num_subscribers,na.rm=TRUE),
+            max_subscribes = max(num_subscribers,na.rm=TRUE),
+            average_reviews = mean(num_reviews, na.rm=TRUE),
+            max_reviews = max(num_reviews, na.rm=TRUE)
+            )
+# show result average rating,average and max subscribes and average and max reviews of paid and non paid course
+#   is_paid average_rating average_subscribes max_subscribes average_reviews max_reviews
+#   <chr>            <dbl>              <dbl>          <int>           <dbl>       <int>
+# 1 False             3.99              5861.         259888            309.       23635
+# 2 True              3.91              2733.         374836            241.       78006
+
+# in conclusion
+# paid courses have count more than non paid courses by 12616 courses
+
+# rating
+# rating of paid courses have average is 3.99 point
+# rating of non paid courses have average is 3.91 point
+
+# subscribes
+# subscribes of paid courses have average is 5861 subscribes and have max subscribe is 259888 subscribes
+# subscribes of non paid courses have average is 2733 subscribes and have max subscribe is 374836 subscribes
+
+# rating
+# rating of paid courses have average is 309 reviews and have max review is 23635 reviews
+# rating of paid courses have average is 241 reviews and have max review is 78006 reviews
