@@ -81,6 +81,17 @@ TopPage
 # 9                             The C++ Standard Library: A Tutorial and Reference            1136
 # 10                                    Artificial Intelligence: A Modern Approach            1132
 
+# find average median and standard deviation of rating book
+AnalyRating <- ProgBook %>% select(Rating) %>% summarise(Average=mean(Rating),Median=median(Rating),SD=sd(Rating))
+AnalyRating
+#    Average Median        SD
+# 1 4.067417    4.1 0.2907487
+
+# find average median and standard deviation of price book
+AnalyPrice <- ProgBook %>% select(Price) %>% summarise(Average=mean(Price),Median=median(Price),SD=sd(Price))
+AnalyPrice
+#    Average   Median       SD
+# 1 54.54186 46.31765 35.71148
 
 # find count in each type book
 TypeBook <- ProgBook %>% count(Type) %>% summarise(TypeBook=Type,count=n) 
@@ -112,41 +123,6 @@ AverageTypeBook
 # 5 Unknown Binding       3.99      124.             249       37.2
 
 # Data Visualization
-
-# Histogram
-# show histogram of rating book by bandwidth = 0.5.
-HistRating <- ProgBook %>% ggplot(aes(x=Rating)) + geom_histogram(fill="gold",col="white",binwidth=0.5)
-HistRating + ggtitle("Number show rating book") +
-  xlab("Rating") + ylab("Count")
-
-# show histogram of number of page book by bandwidth = 100.
-HistPage <- ProgBook %>% ggplot(aes(x=Number_Of_Pages)) + geom_histogram(fill="maroon",col="gold",binwidth=100)
-HistPage + ggtitle("Number show number of page book") +
-  xlab("Number of page") + ylab("Count")
-
-# Bar chart
-# show top 5 type book have the most reviews in each type book.
-BarTypeTopAvgReview <- AverageTypeBook %>% ggplot(aes(x=reorder(Type, -avg_review),y=avg_review)) + geom_bar(stat = "identity",fill="purple",col="violet")
-BarTypeTopAvgReview + ggtitle("Top 5 type books have the most average reviews") +
-  xlab("") + ylab("average of Review")
-
-# show top 5 type book have the most average price in each type book.
-BarTypeTopAvgPrice <- AverageTypeBook %>% ggplot(aes(x=reorder(Type, -avg_price),y=avg_price)) + geom_bar(stat = "identity",fill="lightgreen",col="green")
-BarTypeTopAvgPrice + ggtitle("Top 5 type books have the most average price") +
-  xlab("") + ylab("average of price")
-
-# Pie chart
-# show count of book in type of book to pie chart.
-PieTypeBook <- ggplot(TypeBook,aes(x="",y=count,fill = TypeBook)) +
-  geom_col() + coord_polar(theta = "y")
-PieTypeBook + ggtitle("Number show each type of book") + xlab("") + ylab("All book have 271 books")
-
-# Scatter plot 
-# compare rating and reviews by show each type of book are different.
-ScatterRatingReview <- ProgBook %>% ggplot(aes(x=Rating,y=Reviews)) + geom_point(aes(color=Type))
-ScatterRatingReview <- ProgBook %>% filter(Reviews<=100) %>% ggplot(aes(x=Rating,y=Reviews)) + geom_point(aes(color=Type))
-ScatterRatingReview + ggtitle("Compare rating and review by type of book by Review") + xlab("Rating") + ylab("Reviews")
-
 # Uncertainly scatter plot
 # compare number of page and price by show each type of book are different and predict it is possible? if book have more page, price of book is increase.
 UncertainlyRatingReview <- ProgBook %>% ggplot(aes(x=Price,y=Number_Of_Pages)) + geom_point(aes(color=Type)) + geom_smooth()
@@ -156,4 +132,4 @@ UncertainlyRatingReview + ggtitle("Compare and predict page of book with price b
 # Box plot
 # show rating in each type book.
 BoxRating <- ProgBook %>% ggplot(aes(x=Type,y=Rating)) + geom_boxplot(aes(color=Type)) + geom_dotplot(aes(color=Type),binaxis='y', stackdir='center', dotsize=0.3)
-BoxRating
+BoxRating + ggtitle("Rating by type of book in box plot") + xlab("") + ylab("Rating")
