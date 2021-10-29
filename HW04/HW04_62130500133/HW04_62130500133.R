@@ -22,5 +22,17 @@ DataProducts$price <- as.integer(DataProducts$price)
 glimpse(DataProducts)
 View(DataProducts)
 
+ 
+#Exploing data how much income of all products
+income <- sum(DataProducts %>% summarise(DataProducts$price * DataProducts$sold))
+print(income)
 
-#Exploing data
+
+#Exploing Count Gender
+genderCount <- DataProducts %>% count($gender)
+print(genderCount)
+
+
+
+
+
