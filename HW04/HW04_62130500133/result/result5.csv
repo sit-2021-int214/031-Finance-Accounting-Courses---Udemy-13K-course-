@@ -1,0 +1,530 @@
+"City","min_Sales"
+"Houston",0.444
+"Waco",0.556
+"Chicago",0.836
+"Philadelphia",0.852
+"Mesquite",0.876
+"Huntsville",0.898
+"San Francisco",0.99
+"Dallas",1.044
+"Aurora",1.08
+"Portland",1.08
+"Jacksonville",1.167
+"Loveland",1.188
+"Auburn",1.24
+"San Antonio",1.272
+"Arlington",1.344
+"Seattle",1.344
+"Tampa",1.344
+"Abilene",1.392
+"Bryan",1.408
+"Phoenix",1.408
+"San Jose",1.44
+"Toledo",1.448
+"Mcallen",1.476
+"Memphis",1.584
+"Pasadena",1.624
+"Baltimore",1.64
+"Peoria",1.68
+"Troy",1.68
+"Fort Worth",1.696
+"New York City",1.728
+"Rockford",1.728
+"Brownsville",1.744
+"Burlington",1.752
+"Roswell",1.78
+"Madison",1.81
+"Santa Barbara",1.81
+"Elyria",1.824
+"Miami",1.869
+"Denver",1.872
+"Colorado Springs",1.938
+"Quincy",1.964
+"Columbus",1.98
+"Sheboygan",1.98
+"Hialeah",1.984
+"Jupiter",2.064
+"Edinburg",2.068
+"Detroit",2.2
+"Chico",2.21
+"Cuyahoga Falls",2.214
+"Pensacola",2.214
+"Cranston",2.22
+"Salem",2.224
+"Akron",2.286
+"Laredo",2.286
+"Round Rock",2.304
+"Skokie",2.304
+"Springfield",2.313
+"Glendale",2.368
+"Parker",2.376
+"Pompano Beach",2.376
+"Murfreesboro",2.469
+"Fargo",2.48
+"Roseville",2.48
+"Johnson City",2.508
+"Carrollton",2.512
+"Jackson",2.61
+"Louisville",2.61
+"Cincinnati",2.624
+"Daytona Beach",2.624
+"Marion",2.624
+"Tyler",2.688
+"Port Saint Lucie",2.694
+"Chester",2.696
+"Atlanta",2.74
+"Austin",2.772
+"Buffalo",2.78
+"Tallahassee",2.784
+"Bristol",2.808
+"Naperville",2.808
+"Ormond Beach",2.808
+"Franklin",2.816
+"Newport News",2.84
+"Highland Park",2.88
+"Los Angeles",2.88
+"Richmond",2.88
+"Rome",2.88
+"Trenton",2.88
+"Des Plaines",2.892
+"Raleigh",2.892
+"Lancaster",2.907
+"Woodstock",2.912
+"Long Beach",2.94
+"Homestead",2.944
+"Apopka",2.952
+"Lorain",2.97
+"Sioux Falls",2.97
+"Clarksville",3
+"La Crosse",3.04
+"San Diego",3.08
+"Concord",3.104
+"Leominster",3.15
+"Oakland",3.15
+"Fort Collins",3.168
+"Thomasville",3.204
+"Wilmington",3.282
+"Boise",3.304
+"Charlotte",3.304
+"Anaheim",3.36
+"Tempe",3.366
+"Huntington Beach",3.38
+"Newark",3.38
+"Plano",3.392
+"Pueblo",3.408
+"Tamarac",3.444
+"Allentown",3.488
+"League City",3.488
+"Nashville",3.488
+"Lawton",3.52
+"Waterbury",3.52
+"Chattanooga",3.564
+"San Luis Obispo",3.62
+"Reno",3.64
+"Grove City",3.648
+"Grand Prairie",3.656
+"Indianapolis",3.69
+"Lawrence",3.69
+"Eagan",3.75
+"Woodland",3.75
+"Lakewood",3.76
+"Virginia Beach",3.76
+"Lakeland",3.768
+"Dublin",3.798
+"Fairfield",3.816
+"Oswego",3.828
+"Everett",3.856
+"Pembroke Pines",3.882
+"Lafayette",3.89
+"Midland",3.9
+"Riverside",3.984
+"Orlando",4.086
+"Greensboro",4.095
+"Suffolk",4.13
+"Hillsboro",4.158
+"Carlsbad",4.17
+"Tucson",4.272
+"Albuquerque",4.28
+"Springdale",4.3
+"Fresno",4.32
+"Hendersonville",4.338
+"Lowell",4.36
+"Redondo Beach",4.36
+"Knoxville",4.368
+"Mesa",4.368
+"Scottsdale",4.401
+"Greenwood",4.41
+"Altoona",4.419
+"El Paso",4.428
+"Westminster",4.448
+"Meriden",4.56
+"Hickory",4.572
+"Boca Raton",4.608
+"Boynton Beach",4.608
+"Coral Springs",4.608
+"Westfield",4.66
+"Plantation",4.662
+"Bakersfield",4.73
+"Gastonia",4.768
+"Clinton",4.77
+"Sanford",4.842
+"Orange",4.91
+"Fayetteville",4.928
+"Layton",4.96
+"Florence",4.98
+"Tigard",5.022
+"Cleveland",5.04
+"Irving",5.04
+"Omaha",5.04
+"Redlands",5.04
+"West Jordan",5.04
+"Salinas",5.16
+"Bloomington",5.176
+"Deltona",5.184
+"Harlingen",5.184
+"Port Arthur",5.184
+"Parma",5.248
+"Bellevue",5.28
+"Georgetown",5.28
+"Henderson",5.32
+"Columbia",5.4
+"Oklahoma City",5.5
+"Bowling Green",5.553
+"Superior",5.56
+"Danville",5.58
+"Plainfield",5.58
+"Bossier City",5.64
+"Marietta",5.64
+"Smyrna",5.67
+"Garden City",5.76
+"Manchester",5.76
+"Rancho Cucamonga",5.76
+"Bolingbrook",5.768
+"Milwaukee",5.82
+"Lansing",5.84
+"Pasco",5.88
+"Gilbert",5.904
+"Santa Ana",5.94
+"Sandy Springs",5.95
+"Inglewood",5.98
+"Sunnyvale",5.984
+"Keller",6
+"Corpus Christi",6.048
+"Durham",6.048
+"Hamilton",6.048
+"Lubbock",6.08
+"Great Falls",6.096
+"Rochester",6.096
+"Torrance",6.096
+"Des Moines",6.12
+"Lake Forest",6.16
+"New Albany",6.16
+"Vineland",6.16
+"Revere",6.24
+"Wheeling",6.24
+"Arvada",6.264
+"Oceanside",6.3
+"Missouri City",6.37
+"Broken Arrow",6.38
+"Wilson",6.408
+"Belleville",6.48
+"North Las Vegas",6.48
+"Paterson",6.54
+"Muskogee",6.56
+"Haltom City",6.608
+"Jonesboro",6.63
+"Encinitas",6.72
+"Deer Park",6.924
+"Cedar Hill",7.08
+"Hoover",7.16
+"Macon",7.16
+"New Brunswick",7.16
+"Edmonds",7.38
+"Rockville",7.38
+"Palm Coast",7.434
+"Holland",7.5
+"Morristown",7.56
+"North Miami",7.632
+"Decatur",7.692
+"Mount Vernon",7.752
+"Fort Lauderdale",7.764
+"Middletown",7.78
+"Port Orange",7.824
+"Moreno Valley",7.86
+"Asheville",7.872
+"Bullhead City",7.92
+"Visalia",7.92
+"Monroe",7.968
+"Hempstead",7.98
+"Grapevine",8.04
+"Lewiston",8.26
+"Las Cruces",8.28
+"Billings",8.288
+"Las Vegas",8.288
+"Cary",8.376
+"Providence",8.4
+"Santa Fe",8.4
+"Mentor",8.448
+"West Allis",8.52
+"Chandler",8.544
+"Garland",8.544
+"Brentwood",8.56
+"Hattiesburg",8.6
+"Apple Valley",8.64
+"Mission Viejo",8.67
+"Broomfield",8.736
+"Saint Charles",8.736
+"Allen",8.784
+"Marysville",8.82
+"Reading",8.856
+"Romeoville",8.952
+"Mobile",8.96
+"Waynesboro",9.14
+"Oxnard",9.144
+"Bedford",9.184
+"Greenville",9.216
+"Hollywood",9.216
+"Bethlehem",9.48
+"Vancouver",9.64
+"Washington",9.64
+"Elmhurst",9.664
+"Medford",9.762
+"Dover",9.84
+"Taylor",9.84
+"Delray Beach",9.912
+"Sacramento",9.98
+"Iowa City",9.99
+"Clovis",10.08
+"Montgomery",10.16
+"Coppell",10.192
+"Oak Park",10.192
+"Thornton",10.32
+"San Marcos",10.332
+"Norwich",10.36
+"Baytown",10.368
+"Freeport",10.476
+"Yuma",10.496
+"Santa Clara",10.56
+"Rapid City",10.68
+"Provo",10.776
+"Beaumont",10.78
+"Tulsa",10.8
+"Yonkers",10.896
+"Little Rock",11.16
+"Carol Stream",11.168
+"Andover",11.21
+"Pearland",11.228
+"Utica",11.52
+"Minneapolis",11.54
+"Coral Gables",11.568
+"San Angelo",11.648
+"Greeley",11.664
+"Bridgeton",11.67
+"Elkhart",11.68
+"Orem",11.68
+"Sterling Heights",11.68
+"Perth Amboy",11.76
+"Saint Louis",11.76
+"Redmond",11.84
+"Rock Hill",11.85
+"Evanston",11.992
+"Pleasant Grove",12.144
+"New Bedford",12.3
+"Wausau",12.39
+"Alexandria",12.42
+"Noblesville",12.56
+"Athens",12.78
+"Farmington",12.88
+"Laguna Niguel",12.96
+"Pine Bluff",12.96
+"Royal Oak",12.96
+"Stockton",12.96
+"Warwick",12.96
+"West Palm Beach",13.12
+"Shelton",13.36
+"Overland Park",13.56
+"Odessa",13.762
+"Dearborn Heights",13.89
+"New Rochelle",13.904
+"Westland",13.98
+"Chapel Hill",14.016
+"Kent",14.016
+"Olympia",14.03
+"Arlington Heights",14.112
+"Sierra Vista",14.368
+"Hackensack",14.4
+"Vallejo",14.45
+"Bayonne",14.46
+"Avondale",14.576
+"Bozeman",14.62
+"Edmond",14.62
+"San Bernardino",14.62
+"Thousand Oaks",14.7
+"Camarillo",14.73
+"Malden",14.76
+"North Charleston",14.76
+"Marlborough",14.82
+"Nashua",14.82
+"Kenosha",14.98
+"Chesapeake",15
+"Eugene",15.176
+"The Colony",15.232
+"Dubuque",15.24
+"Lakeville",15.28
+"Manteca",15.28
+"Englewood",15.48
+"Milford",15.48
+"Margate",15.552
+"Saint Petersburg",15.552
+"Fremont",15.92
+"Saginaw",15.92
+"Grand Island",15.96
+"Portage",16.28
+"Green Bay",16.74
+"Lehi",16.776
+"Pocatello",17.04
+"Cambridge",17.12
+"Mount Pleasant",17.14
+"Escondido",17.248
+"Niagara Falls",17.28
+"Kenner",17.34
+"La Porte",17.38
+"Norfolk",17.43
+"Lake Charles",17.94
+"Maple Grove",17.94
+"San Clemente",18.088
+"Longview",18.24
+"Watertown",18.54
+"Pomona",18.75
+"Wichita",18.9
+"Medina",19.242
+"Antioch",19.44
+"Grand Rapids",19.44
+"Salt Lake City",19.44
+"Amarillo",19.648
+"Hampton",20.12
+"Miramar",20.232
+"Twin Falls",20.416
+"Frankfort",20.768
+"Meridian",21.312
+"Logan",21.36
+"Appleton",21.56
+"Gresham",21.728
+"Morgan Hill",21.92
+"Tinley Park",22.288
+"Pharr",22.608
+"Harrisonburg",23.08
+"Atlantic City",23.36
+"Spokane",23.84
+"New Castle",23.92
+"Cottage Grove",24.56
+"Bellingham",25.12
+"Draper",25.16
+"Aberdeen",25.5
+"Owensboro",25.5
+"Caldwell",25.92
+"Hot Springs",25.92
+"Lincoln Park",25.99
+"Murray",25.99
+"South Bend",26.4
+"Passaic",26.88
+"Frisco",27.168
+"Urbandale",27.24
+"East Point",27.42
+"Danbury",27.46
+"Laurel",27.46
+"Montebello",27.88
+"Canton",28.4
+"Kirkwood",28.4
+"College Station",28.672
+"Ann Arbor",29.16
+"Temecula",29.2
+"Costa Mesa",29.22
+"Covington",29.9
+"Waterloo",30.32
+"Gulfport",31.36
+"East Orange",31.8
+"Woodbury",32.34
+"Davis",32.4
+"Eau Claire",32.56
+"Tuscaloosa",33.74
+"Charlottesville",34.65
+"Goldsboro",34.944
+"York",37.896
+"Gladstone",38.04
+"Helena",39.9
+"Rogers",40.41
+"Olathe",40.56
+"Mansfield",41.472
+"Warner Robins",41.86
+"Redwood City",41.904
+"Southaven",42.68
+"Hagerstown",43.8
+"Woonsocket",45.36
+"La Quinta",46.32
+"Texarkana",48.9
+"Yucaipa",50.8
+"Renton",51.84
+"Modesto",52.792
+"Waukesha",54.5
+"Lindenhurst",55.48
+"Dearborn",60.84
+"Coachella",63.56
+"Norman",63.88
+"Moorhead",63.96
+"Saint Cloud",72
+"Littleton",72.294
+"San Mateo",75.18
+"Saint Paul",77.88
+"Summerville",79.1
+"Sparks",79.36
+"Clifton",81.92
+"La Mesa",82.56
+"Lebanon",84.96
+"Jefferson City",86.62
+"Bartlett",88.96
+"Melbourne",95.616
+"Hesperia",99.99
+"Bangor",101.96
+"Texas City",102.438
+"Burbank",111
+"Conroe",111.672
+"Linden",115.36
+"Santa Maria",115.44
+"Palatine",116.312
+"Mishawaka",128.4
+"Citrus Heights",129.39
+"Rochester Hills",132.52
+"Beverly",141.76
+"Park Ridge",143.856
+"Pico Rivera",145.9
+"Commerce City",146.352
+"Champaign",151.96
+"Glenview",158.376
+"Jamestown",159.98
+"Longmont",165.6
+"Gaithersburg",173.94
+"Chula Vista",182.94
+"Richardson",190.92
+"Coon Rapids",221.16
+"Rio Rancho",230.352
+"San Gabriel",270.72
+"Manhattan",273.96
+"Cedar Rapids",278.4
+"Lake Elsinore",283.92
+"Ontario",283.92
+"Conway",301.96
+"Holyoke",301.96
+"Redding",333.576
+"Orland Park",339.96
+"Buffalo Grove",355.455
+"Normal",366.744
+"El Cajon",387.136
+"Vacaville",423.28
+"Whittier",444.768
+"Murrieta",484.65
+"Missoula",487.984
+"Saint Peters",697.16
+"Kissimmee",751.984
+"Independence",839.43
+"Cheyenne",1603.136
