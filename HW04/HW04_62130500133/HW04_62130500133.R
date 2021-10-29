@@ -34,13 +34,12 @@ glimpse(superData)
 
 ### 5.1 Which city has sales more than sales average
 result1 <- superData %>% group_by(City) %>% summarise(mean = mean(Sales,na.rm = TRUE)) %>% select(City,mean) %>% filter(mean >= mean(superData$Sales, na.rm = TRUE))
-print(result)
+view(result)
+write.csv(result,"D:\\sit\\int214\\project\\HW04\\HW04_62130500133\\result\\result1.csv", row.names = FALSE)
 
-
-### 5.2 list orderId and order.date has order.date after 2020-12-30
-result2 <- superData %>% select(Order.ID,Order.Date) %>% filter(Order.Date > as.Date("2020-12-30"))
+### 5.2 list orderId and order.date has order.date after 30/12/2018
+result2 <- superData %>% select(Order.ID,Order.Date) %>% filter(Order.Date >= dmy("30/12/2018"))
 print(result2)
-
 
 ### 5.3 find mean of Home office segment sales
 result3 <- superData %>% filter(Segment == "Home Office") %>% summarise(mean = mean(Sales,na.rm = TRUE))
