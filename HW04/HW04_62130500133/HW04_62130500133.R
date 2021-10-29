@@ -16,5 +16,11 @@ View(DataProducts)
 glimpse(DataProducts)
 
 
-DataProducts$price <- str_remove(DataProducts$price,"	
-THB")
+DataProducts$price <- str_remove(DataProducts$price,"THB")
+DataProducts$price <- str_remove(DataProducts$price,",")
+DataProducts$price <- as.integer(DataProducts$price)
+glimpse(DataProducts)
+View(DataProducts)
+
+
+#Exploing data
