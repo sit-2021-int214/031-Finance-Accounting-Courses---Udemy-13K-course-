@@ -52,6 +52,7 @@ print(result4)
 ### 5.5 find min sales of each city sort by sales min
 result5 <- superData %>% group_by(City) %>% summarise(min_Sales = min(Sales)) %>% arrange(min_Sales)
 print(result5)
+write.csv(result5,"D:\\sit\\int214\\project\\HW04\\HW04_62130500133\\result\\result5.csv", row.names = FALSE)
 
 ### 5.6 find city has max sales
 result6 <- superData %>% select(City,Sales) %>% filter(Sales == min(Sales))
@@ -87,7 +88,7 @@ DataProducts$price <- str_remove(DataProducts$price,",")
 # Change data TYPE chr to dbl
 DataProducts$price <- as.double(DataProducts$price)
 glimpse(DataProducts)
-View(DataProducts)
+write.csv(DataProducts,"D:\\sit\\int214\\project\\HW04\\HW04_62130500133\\result\\productCleaning.csv", row.names = FALSE)
 
 
 
