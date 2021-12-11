@@ -1,10 +1,10 @@
-# Project Midterm
+# Project Term Assignment
 
 Exploring data from udemy dataset ( [Here](https://raw.githubusercontent.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/main/assignment/data/udemy_output_All_Finance__Accounting_p1_p626.csv) )
 
 and R file is in here ( [Here](https://raw.githubusercontent.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/main/assignment/MidtermAssignment.R) )
 
-### Prepare
+## Prepare
 
 1.) install Package readr assertive stringr dplyr.
 
@@ -31,7 +31,7 @@ Udemy <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/031-Finance
 View(Udemy)
 ```
 
-### Explore a Data
+## Explore a Data
 ```{R}
 # Testing with glimpse
 glimpse(Udemy)
@@ -63,7 +63,7 @@ data of Udemy have 13608 rows and 20 columns by each columns have
 - price_ detail_currency : The currency corresponding to the price detail amount for a course.
 - price_ detail_price_string :
 
-### Data Cleaning
+## Data Cleaning
 
 1.) check data type of UdemyCSV and declare Udemy
 
@@ -132,9 +132,9 @@ Udemy <- Udemy %>% mutate(discount_price__price_string=paste(discount_price__cur
 Udemy <- Udemy %>% mutate(price_detail__price_string=paste(price_detail__currency,price_detail__amount))
 ```
 
-2.) Explore Data
+3.) Explore Data
 
-2.1) find title name, rating, number of subscribers and number of reviews who are top of 10 courses have the most reviews in each course
+3.1) find title name, rating, number of subscribers and number of reviews who are top of 10 courses have the most reviews in each course
 
 ```{R}
 Udemy %>%
@@ -161,7 +161,7 @@ result from output:
 10                The Business Intelligence Analyst Course 2020 4.49575    115269   23906
 ```
 
-2.2) find number of courses and price detail of amount who are top of 15 courses have the most price detail of amount course
+3.2) find number of courses and price detail of amount who are top of 15 courses have the most price detail of amount course
 
 ```{R}
 Udemy %>%
@@ -193,7 +193,7 @@ result from output:
 14   8640 3213
 15   8320   71
 ```
-2.3) show your summarise of course who are paid and not paid with count of course, average of rating, average of subscribes, max of subscribe and average of review and max of review
+3.3) show your summarise of course who are paid and not paid with count of course, average of rating, average of subscribes, max of subscribe and average of review and max of review
 
 ```{R}
 Udemy %>% count(is_paid) %>% summarise(is_paid,count_course=n) # count of course
@@ -237,3 +237,178 @@ result from output:
 # rating of paid courses have average is 309 reviews and have max review is 23635 reviews
 # rating of paid courses have average is 241 reviews and have max review is 78006 reviews
 ```
+
+## Analytically Inferential Statistics
+
+### **Topic(โจทย์):** ถ้าเราอยากจะรู้ว่าข้อมูลการซื้อขายของ course ที่ซื้อกับไม่ซื้อมี rating ที่แตกต่างกันมากไหม โดยให้ค่าความสำคัญที่ 5% ที่สามารถแตกต่างกันได้
+
+**วิธีทำ**
+
+1.) Hypothesis rating โดยใช้การสุ่มกลุ่มตัวอย่าง จากข้อมูล 2 ชุดที่มีจำนวนเท่ากัน 100 ชุด โดยตั้งสมมุติฐานว่า
+
+- H0: mean_pop_rating_paid = mean_pop_rating_free
+- Ha: mean_pop_rating_paid != mean_pop_rating_free
+
+**test type (ทดสอบในลักษณะ):** two tail แบบ upper tail
+
+-
+
+2.) ตั้งกลุ่มตัวอย่าง 100 ตัวในข้อมูลในแต่ละชุดคือชุดที่จ่ายเงินกับชุดที่ไม่จ่ายเงินของ แต่ละ course
+
+```{R}
+sample_rating_is_paid <- sample(Udemy$rating[Udemy$is_paid == "True"], 100, replace = F)
+sample_rating_is_paid
+sample_rating_is_free <- sample(Udemy$rating[Udemy$is_paid == "False"], 100, replace = F)
+sample_rating_is_free
+```
+
+-
+
+3.) เตรียมเครื่องมือเอาไว้ใช้ในการคำนวณเครื่องมือทางสถิติ โดยหา จำนวนข้อมูลในแต่ละชุดโดยแยกข้อมูลออกจากกัน, ค่าเฉลี่ยของประชากรแต่ละชุด, ค่าเฉลี่ยของกลุ่มตัวอย่างแต่ละชุด, ส่วนเบี่ยงเบนมาตราฐานที่รู้แต่ละชุด
+
+```{R}
+n_rating_paid <- 100
+n_rating_free <- 100
+mean_pop_rating_paid <- mean(Udemy$rating[Udemy$is_paid == "True"])
+mean_pop_rating_free <- mean(Udemy$rating[Udemy$is_paid == "False"])
+mean_rating_paid <- mean(sample_rating_is_paid)
+mean_rating_free <- mean(sample_rating_is_free)
+sd_known_rating_paid <- sd(Udemy$rating[Udemy$is_paid == "True"])
+sd_known_rating_free <- sd(Udemy$rating[Udemy$is_paid == "False"])
+```
+
+-
+
+4.) หา standard error และ ค่ามาตราฐาน (z-test)
+
+```{R}
+sd_error_rating <- sqrt(sd_known_rating_paid^2/n_paid+sd_known_rating_free^2/n_free)
+z_rating <- ((mean_rating_paid-mean_rating_free)-(mean_pop_rating_paid-mean_pop_rating_free))/sd_error_rating
+z_rating
+```
+
+-
+
+5.) หาค่า p-value โดยที่ p-value ไม่ควรเกิน 0.5 จึงทำเงื่อนไขตาม R syntax
+
+```{R}
+if(z_rating < 0){
+  p_rating <- pnorm(z_rating)
+} else {
+  p_rating <- 1-pnorm(z_rating)
+}
+```
+
+-
+
+6.) สรุปผล 
+
+```{R}
+# p-value
+if(p_rating < 0.05/2){
+  print("Reject H0")
+} else {
+  print("Accept H0")
+}
+# critical value
+if(z_rating > qnorm(1-0.05/2)){
+  print("Reject H0")
+} else {
+  print("Accept H0")
+}
+```
+
+### ถ้าเราอยากรู้ว่าข้อมูลที่เราใช้ในการทดสอบคาดการณ์ว่ามีผลต่างของข้อมูลอยู่ในช่วงไหน
+
+เราต้องหา margin error
+
+```{R}
+# ถ้าหากเราจะไปทำนายหาช่วงผลต่างของ rating ที่จ่ายด้วยเงินและไม่จ่ายด้วยเงิน
+margin_rating <- qnorm(1-0.05/2)*sd_error_rating
+margin_rating
+```
+
+หาค่าสูงสุดและต่ำสุดที่เป็นไปได้
+
+```{R}
+# upper value
+upper_rating <- abs(mean_rating_paid-mean_rating_free) + margin_rating
+upper_rating
+
+# lower value
+lower_rating <- abs(mean_rating_paid-mean_rating_free) - margin_rating
+lower_rating
+```
+
+### ตัวอย่างข้อมูลที่สุ่มออกมาใช้ในการทดสอบ
+
+sample is paid rating by n = 100
+
+```{R}
+# [1] 3.94945 4.14795 4.66057 4.35504 4.55401 4.56240 2.00000 4.57799 4.33636 2.93186
+# [11] 3.60035 3.91849 4.36840 4.61793 4.38520 2.47247 3.81780 3.63925 4.58543 4.38030
+# [21] 4.21049 4.19113 5.00000 2.80897 4.89543 4.79492 3.92075 4.73606 4.20583 4.78134
+# [31] 4.10000 4.63867 4.05345 4.56246 4.34425 4.22471 4.88821 4.67703 4.16000 4.43382
+# [41] 4.11458 4.49054 3.91908 4.31248 4.52021 3.75936 4.28778 4.33648 3.86469 4.51779
+# [51] 3.97261 3.40142 3.96048 0.00000 2.85834 4.56611 4.62871 4.05963 4.33540 4.22954
+# [61] 4.55241 3.85204 3.84667 3.89128 4.10302 4.24844 4.02976 4.28173 4.30664 4.42281
+# [71] 4.73625 2.70729 4.47386 4.00153 3.58243 4.27064 3.92559 4.28619 2.90401 4.35076
+# [81] 4.40367 4.23163 4.18657 4.07095 3.55283 4.17347 3.31548 3.34162 4.53329 4.49135
+# [91] 4.90196 4.06397 3.72520 3.99918 3.83553 3.97387 4.74109 4.24397 3.58698 4.06257
+```
+
+sample is free rating by n = 100
+
+```{R}
+# [1] 3.75213 4.14571 4.13750 3.89460 4.17271 3.50000 4.06563 4.58665 4.10678 4.40525
+# [11] 4.00000 0.00000 3.84598 5.00000 4.38160 4.38556 4.25875 0.00000 4.20942 3.53047
+# [21] 3.84792 4.02083 4.58019 4.24133 4.34252 4.19693 3.33148 3.83048 4.24015 3.73411
+# [31] 4.44648 4.29982 3.81307 4.40483 3.08827 4.35902 4.41875 3.85280 3.70693 4.27452
+# [41] 4.11127 4.59946 4.44332 3.00000 4.87276 4.42527 4.37402 4.11986 3.72713 4.61725
+# [51] 0.00000 4.31090 4.20072 4.25665 4.59504 4.05951 4.12339 4.23459 0.00000 0.00000
+# [61] 4.18113 3.92760 4.29007 4.51729 4.59369 4.06067 3.96070 4.04902 4.05323 4.32281
+# [71] 4.22472 4.74157 4.03237 3.94719 4.83056 4.30133 4.12517 4.12463 4.52387 4.00000
+# [81] 4.20644 3.65905 4.00888 4.46141 3.74929 3.99102 3.77589 3.89936 4.71842 4.13518
+# [91] 4.28257 4.21348 4.53623 4.32703 4.21097 4.52087 3.95332 4.26935 4.42219 4.37794
+```
+เตรียมเครื่องมือเอาไว้ใช้ในการคำนวณเครื่องมือทางสถิติ
+
+หาค่าเฉลี่ยของข้อมูลในแต่ละชุด
+
+> mean population rating paid is 3.909139
+> mean population rating free is 3.994254
+> mean sample rating paid is 4.078325
+> mean sample rating free is 3.960068
+
+หาค่าส่วนเบี่ยงเบนมาตราฐาน
+
+> standard deviation known of rating paid is 1.045568
+> standard deviation known of rating free is 0.8518249
+
+หาค่า standard error
+
+> standard error of rating is 0.1348636
+
+หาค่า z-test
+
+> z-test of sample rating is 1.507981
+
+หาค่า p-value
+
+> p-value of sample rating is 0.06577976
+
+ทดสอบว่าต่ำกว่าค่าความสำคัญเท่ากับ 5% ไหม
+
+> conclusion by significant value 5%, p-value is "Accept H0" and critical-value is "Accept Ho"
+
+**สรุป** ข้อมูลทั้ง 2 ชุดคือ course ที่จ่ายและไม่จ่ายด้วยเงินต่างมีข้อมูล rating ที่ไม่แตกต่างกันมาก
+
+### เมื่อนำข้อมูลไปคาดการณ์ ถึงความแตกต่างกันระหว่าง ค่าเฉลี่ย rating ของ course ที่จ่ายเงินกับไม่จ่ายเงิน
+
+> margin error of rating is 0.2643277
+
+> upper value is 0.3825848
+
+> lower value is -0.1460706
+
+**สรุป** ข้อมูลทั้งสองชุด คาดการณ์ว่ามีผลต่างของ rating ในช่วงของ 0 ถึง 0.3826
