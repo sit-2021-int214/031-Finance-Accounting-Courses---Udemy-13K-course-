@@ -251,7 +251,7 @@ result from output:
 
 **test type (ทดสอบในลักษณะ):** two tail แบบ upper tail
 
--
+---
 
 2.) ตั้งกลุ่มตัวอย่าง 100 ตัวในข้อมูลในแต่ละชุดคือชุดที่จ่ายเงินกับชุดที่ไม่จ่ายเงินของ แต่ละ course
 
@@ -262,7 +262,7 @@ sample_rating_is_free <- sample(Udemy$rating[Udemy$is_paid == "False"], 100, rep
 sample_rating_is_free
 ```
 
--
+---
 
 3.) เตรียมเครื่องมือเอาไว้ใช้ในการคำนวณเครื่องมือทางสถิติ โดยหา จำนวนข้อมูลในแต่ละชุดโดยแยกข้อมูลออกจากกัน, ค่าเฉลี่ยของประชากรแต่ละชุด, ค่าเฉลี่ยของกลุ่มตัวอย่างแต่ละชุด, ส่วนเบี่ยงเบนมาตราฐานที่รู้แต่ละชุด
 
@@ -277,7 +277,7 @@ sd_known_rating_paid <- sd(Udemy$rating[Udemy$is_paid == "True"])
 sd_known_rating_free <- sd(Udemy$rating[Udemy$is_paid == "False"])
 ```
 
--
+---
 
 4.) หา standard error และ ค่ามาตราฐาน (z-test)
 
@@ -287,7 +287,7 @@ z_rating <- ((mean_rating_paid-mean_rating_free)-(mean_pop_rating_paid-mean_pop_
 z_rating
 ```
 
--
+---
 
 5.) หาค่า p-value โดยที่ p-value ไม่ควรเกิน 0.5 จึงทำเงื่อนไขตาม R syntax
 
@@ -299,7 +299,7 @@ if(z_rating < 0){
 }
 ```
 
--
+---
 
 6.) สรุปผล 
 
@@ -376,13 +376,17 @@ sample is free rating by n = 100
 หาค่าเฉลี่ยของข้อมูลในแต่ละชุด
 
 > mean population rating paid is 3.909139
+
 > mean population rating free is 3.994254
+
 > mean sample rating paid is 4.078325
+
 > mean sample rating free is 3.960068
 
 หาค่าส่วนเบี่ยงเบนมาตราฐาน
 
 > standard deviation known of rating paid is 1.045568
+
 > standard deviation known of rating free is 0.8518249
 
 หาค่า standard error
