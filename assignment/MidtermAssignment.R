@@ -344,7 +344,7 @@ lower_sub
 
 # ตัวอย่างการทดสอบ
 
-# sample is paid rating by n = 100
+# sample is paid number subscribe by n = 100
 # [1]  1299   111  1370    21    57    19   423 15118  1616    18    93   175   143 13388
 # [15]  2000     5   505   112     0   358   781    79 13388   239  1555  7916    50   513
 # [29]    22  2226  1432    18  6376  1583  2245    10   209    56    27  1503   583  2108
@@ -354,7 +354,7 @@ lower_sub
 # [85] 83126   676  1547   133  3986  1048    90   116   203   135     0  1022   960  1569
 # [99]    27   440
 
-# sample is free rating by n = 100
+# sample is free number subscribe by n = 100
 # [1]   751   108  2591   284  8304   122  5908  1913   428  1250  4801    25   485  5375
 # [15]  4362    39  2305  1511  4751  1322  3017  2151 12540   831  4651  2118  5774   401
 # [29]  7557  1372  9996  1106   314 10920 17254   188   738  7621   324  6187  4472  2648
@@ -364,27 +364,27 @@ lower_sub
 # [85]  1189   105    19  4175  4844    81  2497 10785  3681  3742    83  3859  1270  6022
 # [99]    81  1317
 
-# mean population rating paid is 2732.987
-# mean population rating free is 5861.286
-# mean sample rating paid is 2759.65
-# mean sample rating free is 4986.76
+# mean population number subscribe paid is 2732.987
+# mean population number subscribe free is 5861.286
+# mean sample number subscribe paid is 2759.65
+# mean sample number subscribe free is 4986.76
 
-# standard deviation known of rating paid is 9179.169
-# standard deviation known of rating free is 14400.34
+# standard deviation known of number subscribe paid is 9179.169
+# standard deviation known of number subscribe free is 14400.34
 
-# standard error of rating is 1707.709
+# standard error of number subscribe is 1707.709
 
-# z-test of sample rating is 0.5277185
+# z-test of sample number subscribe is 0.5277185
 
-# p-value of sample rating is 0.2988474
+# p-value of sample number subscribe is 0.2988474
 
 # conclusion by significant value 5%, p-value is "Accept H0" and critical-value is "Accept Ho"
 
-# สรุปข้อมูลทั้ง 2 ชุดคือ course ที่จ่ายและไม่จ่ายด้วยเงินต่างมีข้อมูล rating ที่ไม่แตกต่างกันมาก
+# สรุปข้อมูลทั้ง 2 ชุดคือ course ที่จ่ายและไม่จ่ายด้วยเงินต่างมีข้อมูล number subscribe ที่ไม่แตกต่างกันมาก
 
-# เมื่อนำข้อมูลไปคาดการณ์ ถึงความแตกต่างกันระหว่าง ค่าเฉลี่ย rating ของ course ที่จ่ายเงินกับไม่จ่ายเงิน
+# เมื่อนำข้อมูลไปคาดการณ์ ถึงความแตกต่างกันระหว่าง ค่าเฉลี่ยของ number subscribe ของ course ที่จ่ายเงินกับไม่จ่ายเงิน
 
-# margin error of rating is 3347.048
+# margin error of number subscribe is 3347.048
 
 # upper value is 5574.158
 
