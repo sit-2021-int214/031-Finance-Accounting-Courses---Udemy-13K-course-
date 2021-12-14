@@ -2,6 +2,8 @@
 
 Original Datasets from: [safe-sit23 github](https://github.com/safesit23/INT214-Statistics/blob/main/datasets/products_original.csv)
 
+![Udemy](https://miro.medium.com/max/724/1*HuQyl7_WMMzOfs8RIlQ-XA.png)
+
 ### About's Products Datasets
 
 This dataset is about's sample uniqlo product that sell in 2021. It includes productID, name of products, type of products, price of products, and number of sold.
