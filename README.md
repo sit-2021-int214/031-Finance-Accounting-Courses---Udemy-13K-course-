@@ -10,7 +10,7 @@ Original Datasets from: [kaggle](https://www.kaggle.com/jilkothari/finance-accou
 
 ## Overview
 
-กลุ่มของเราเลือกข้อมูลชุดนี้มาเพื่อศึกษา 10 อันดับ course ที่สามารถที่มียอดผู้ติดตามมากที่สุด course ที่ไปเปรียบเทียบระหว่าง rating กับ ยอดผู้ติดตาม และราคา course ว่าแตกต่างกันอย่างไร และ ความแตกต่างระหว่าง course ที่ต้องเสียค่าใช้จ่ายก่อนเข้ากับ course ที่ต้องไม่เสียค่าใช้จ่าย
+กลุ่มของเราเลือกข้อมูลชุดนี้มาเพื่อศึกษา 10 อันดับ course ที่สามารถที่มียอดผู้ติดตามมากที่สุด course ที่ไปเปรียบเทียบระหว่าง rating กับ ยอดผู้ติดตาม และราคา course ว่าแตกต่างกันอย่างไร และ ความแตกต่างระหว่าง course ที่ต้องเสียค่าใช้จ่ายก่อนเข้ากับ course ที่ต้องไม่เสียค่าใช้จ่าย และนำไปสามารถไปเปรียบเทียบกับเว็ป course อื่นๆ ได้ด้วย
 
 ### Steps
 
@@ -29,8 +29,8 @@ Original Datasets from: [kaggle](https://www.kaggle.com/jilkothari/finance-accou
 
 ## Table of Contents
 
-1. [Exploratory Data Analysis and Hypothesis](./01_explore.md)
-2. [Data Visualization by power bi]()
+1. [Exploratory Data Analysis and Hypothesis](https://github.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/blob/main/assignment/MidtermAssignment.md)
+2. [Data Visualization by power bi](https://app.powerbi.com/view?r=eyJrIjoiZDhlNDUxOGEtNjk4Yi00NGM5LTllZWMtY2Y5ZDQwYWQ5NGFhIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D)
 
 ## Resources
 
