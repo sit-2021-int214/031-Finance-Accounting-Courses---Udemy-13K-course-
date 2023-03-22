@@ -116,7 +116,7 @@ Udemy$id %>% duplicated() %>% sum()
 # discount price
 Udemy$discount_price__amount <- replace(Udemy$discount_price__amount,is.na(Udemy$discount_price__amount), round(mean(Udemy$discount_price__amount,na.rm=T)))
 # price detail
-Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,is.na(Udemy$price_detail__amount), round(mean(Udemy$discount_price__amount,na.rm=T)))
+Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,is.na(Udemy$price_detail__amount), round(mean(Udemy$price_detail__amount,na.rm=T)))
 
 # When currency price of course aren't show in table should replace by INR
 # discount price
