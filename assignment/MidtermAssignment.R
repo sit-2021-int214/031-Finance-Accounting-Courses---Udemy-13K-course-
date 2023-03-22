@@ -1,7 +1,7 @@
 # import csv
 
-UdemyCSV <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/main/assignment/data/udemy_output_All_Finance__Accounting_p1_p626.csv")
-View(UdemyCSV)
+Udemy <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/main/assignment/data/udemy_output_All_Finance__Accounting_p1_p626.csv")
+View(Udemy)
 
 install.packages("readr")
 install.packages("assertive")
@@ -13,7 +13,7 @@ library("stringr")
 library("dplyr")
 
 # Explore data 
-glimpse(UdemyCSV) #data of Udemy have 13608 rows and 20 columns by each columns have
+glimpse(Udemy) #data of Udemy have 13608 rows and 20 columns by each columns have
 
 # id : The course ID of that particular course.
 # title : Shows the unique names of the courses available under the development category on Udemy.
@@ -55,13 +55,13 @@ Udemy$price_detail__amount <- as.numeric(Udemy$price_detail__amount)
 # by id is duplicate
 Udemy$id %>% duplicated() %>% sum()
 # 0
-# Umedy have some data are not duplicate
+# Udemy have some data are not duplicate
 
-# When amount price of course aren't show in table should replace by o
+# When amount price of course aren't show in table should replace by global average
 # discount price
-Udemy$discount_price__amount <- replace(Udemy$discount_price__amount,is.na(Udemy$discount_price__amount), 0)
+Udemy$discount_price__amount <- replace(Udemy$discount_price__amount,is.na(Udemy$discount_price__amount), round(mean(Udemy$discount_price__amount,na.rm=T)) )
 # price detail
-Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,is.na(Udemy$price_detail__amount), 0)
+Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,is.na(Udemy$price_detail__amount), round(mean(Udemy$discount_price__amount,na.rm=T)) )
 
 # When currency price of course aren't show in table should replace by INR
 # discount price
@@ -75,6 +75,9 @@ Udemy <- Udemy %>% mutate(discount_price__price_string=paste(discount_price__cur
 # note your can't use character plus character by character + character but can use paste(x1,x2,...,(collapse="-")[optional])
 # price detail
 Udemy <- Udemy %>% mutate(price_detail__price_string=paste(price_detail__currency,price_detail__amount))
+
+# save cleaning data in csv file
+write.csv(Udemy, "D://Benz/Resources/DBMS/031-Finance-Accounting-Courses---Udemy-13K-course-/assignment/data/udemy_output_All_Finance__Accounting_p1_p626_after_clean.csv", row.names=F)
 
 # find title name, rating, number of subscribers and number of reviews who are top of 10 courses have the most reviews in each course
 Udemy %>%
@@ -161,12 +164,6 @@ Udemy %>% group_by(is_paid) %>%
 # rating
 # rating of paid courses have average is 309 reviews and have max review is 23635 reviews
 # rating of paid courses have average is 241 reviews and have max review is 78006 reviews
-
-
-# Data visualization can code here!!
-
-
-
 
 
 # Analytically Inferential Statistics
