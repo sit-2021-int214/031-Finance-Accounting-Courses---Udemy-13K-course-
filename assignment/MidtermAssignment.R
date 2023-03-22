@@ -1,5 +1,4 @@
 # import csv
-
 Udemy <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/031-Finance-Accounting-Courses---Udemy-13K-course-/main/assignment/data/udemy_output_All_Finance__Accounting_p1_p626.csv")
 View(Udemy)
 
@@ -189,7 +188,7 @@ sd_known_rating_paid <- sd(Udemy$rating[Udemy$is_paid == "True"])
 sd_known_rating_free <- sd(Udemy$rating[Udemy$is_paid == "False"])
 
 # หาค่า z value ในการทดสอบ
-sd_error_rating <- sqrt(sd_known_rating_paid^2/n_paid+sd_known_rating_free^2/n_free)
+sd_error_rating <- sqrt(sd_known_rating_paid^2/n_rating_paid+sd_known_rating_free^2/n_rating_free)
 z_rating <- ((mean_rating_paid-mean_rating_free)-(mean_pop_rating_paid-mean_pop_rating_free))/sd_error_rating
 z_rating
 
