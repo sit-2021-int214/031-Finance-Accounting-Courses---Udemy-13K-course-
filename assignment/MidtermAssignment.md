@@ -112,11 +112,11 @@ Udemy$id %>% duplicated() %>% sum()
 # 0
 # Umedy have some data are not duplicate
 
-# When amount price of course aren't show in table should replace by o
+# When amount price of course aren't show in table should replace by global average
 # discount price
-Udemy$discount_price__amount <- replace(Udemy$discount_price__amount,is.na(Udemy$discount_price__amount), 0)
+Udemy$discount_price__amount <- replace(Udemy$discount_price__amount,is.na(Udemy$discount_price__amount), round(mean(Udemy$discount_price__amount,na.rm=T)))
 # price detail
-Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,is.na(Udemy$price_detail__amount), 0)
+Udemy$price_detail__amount <- replace(Udemy$price_detail__amount,is.na(Udemy$price_detail__amount), round(mean(Udemy$discount_price__amount,na.rm=T)))
 
 # When currency price of course aren't show in table should replace by INR
 # discount price
@@ -282,7 +282,7 @@ sd_known_rating_free <- sd(Udemy$rating[Udemy$is_paid == "False"])
 4.) หา standard error และ ค่ามาตราฐาน (z-test)
 
 ```{R}
-sd_error_rating <- sqrt(sd_known_rating_paid^2/n_paid+sd_known_rating_free^2/n_free)
+sd_error_rating <- sqrt(sd_known_rating_paid^2/n_rating_paid+sd_known_rating_free^2/n_rating_free)
 z_rating <- ((mean_rating_paid-mean_rating_free)-(mean_pop_rating_paid-mean_pop_rating_free))/sd_error_rating
 z_rating
 ```
